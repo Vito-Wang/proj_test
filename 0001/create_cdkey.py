@@ -30,16 +30,15 @@ def create_cdkey(num, length):
             result[key] = 1
             yield key
 
-    # for key in result:
-    #     print key
-
-
-if __name__ == '__main__':
     try:
         with open('E:/data1.txt', 'wb') as f:
             for k in create_cdkey(200, 12):
-                f.write(k + '\n')
+                f.writelines(k + '\n')
 
     except IOError, e:
         print 'IOError', e
+
+
+if __name__ == '__main__':
+    create_cdkey(200,12)
 
