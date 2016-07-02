@@ -30,6 +30,7 @@ def create_cdkey(num, length):
             result[key] = 1
             yield key
 
+    # 把生成的激活码存入txt文档中
     try:
         with open('E:/data1.txt', 'wb') as f:
             for k in create_cdkey(200, 12):
